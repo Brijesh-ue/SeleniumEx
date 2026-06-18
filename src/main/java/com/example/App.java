@@ -11,7 +11,11 @@ import org.openqa.selenium.WebDriver;
 public class App 
 {
     public static void main( String[] args )throws Exception
-    {
+    {    
+        ChromeOptions option = new ChromeOptions;
+        options.addArguments('--headless=new');
+        options.addArguments('--no-sandbox');
+        options.addArguments('--disable-dev-shm-usage');
         WebDriver driver = new ChromeDriver();
         
         driver.get("https://automationexercise.com/");
