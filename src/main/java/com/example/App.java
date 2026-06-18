@@ -16,15 +16,13 @@ public class App
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        WebDriver driver = new ChromeDriver(options);
         
-        driver.get("https://automationexercise.com/");
+        WebDriver driver=new ChromeDriver(options);
+        driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
-        driver.findElement(By.xpath("(//a[contains(text(),'Add to cart')])[1]")).click();
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//u[text()='View Cart']")).click();
-        System.out.println( "Logged In" );
-        Thread.sleep(3000);
-        driver.quit();
     }
 }
