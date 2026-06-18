@@ -17,12 +17,16 @@ public class App
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         
-        WebDriver driver=new ChromeDriver(options);
-        driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
-        Thread.sleep(3000);
+        
+    	WebDriver driver = new ChromeDriver(options);
+    	driver.get("https://www.saucedemo.com/");
+    	driver.manage().window().maximize();
+    	driver.findElement(By.id("user-name")).sendKeys("standard_user");
+    	driver.findElement(By.id("password")).sendKeys("secret_sauce");
+    	driver.findElement(By.id("login-button")).click();
+    	Thread.sleep(3000);
+    	driver.quit();
+    	
+    	
     }
 }
