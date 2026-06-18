@@ -12,7 +12,7 @@ public class App
 {
     public static void main( String[] args )throws Exception
     {    
-        ChromeOptions option = new ChromeOptions;
+        ChromeOptions options = new ChromeOptions;
         options.addArguments('--headless=new');
         options.addArguments('--no-sandbox');
         options.addArguments('--disable-dev-shm-usage');
